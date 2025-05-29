@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* TailwindCSS-based modern, clean, and soft design system for your recipe website */
+
+/* 1. Global styles */
+/* You can apply this in your globals.css or through Tailwind config */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+/* 2. Layout wrapper */
+.layout {
+  @apply min-h-screen flex flex-col;
+}
+
+/* 3. Header */
+.header {
+  @apply bg-white shadow-md py-4 px-6 flex justify-between items-center;
+}
+
+.header-title {
+  @apply text-2xl font-bold text-gray-800;
+}
+
+.header-nav a {
+  @apply text-gray-600 hover:text-blue-600 transition-colors duration-200;
+}
+
+/* 4. Footer */
+.footer {
+  @apply bg-white mt-auto py-4 px-6 text-center text-sm text-gray-500;
+}
+
+/* 5. Page container */
+.page {
+  @apply p-6 max-w-7xl mx-auto;
+}
+
+/* 6. RecipeCard */
+.recipe-card {
+  @apply border rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer bg-white;
+}
+
+.recipe-card img {
+  @apply w-full h-48 object-cover;
+}
+
+.recipe-card h2 {
+  @apply text-lg mt-2 text-center font-medium px-2;
+}
+
+/* 7. Recipe Detail */
+.recipe-detail {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+.recipe-detail img {
+  @apply w-full h-64 object-cover rounded;
+}
+
+.recipe-detail h1 {
+  @apply text-3xl font-bold mt-4;
+}
+
+.recipe-detail p {
+  @apply mt-4 leading-relaxed whitespace-pre-line;
+}
+
+.recipe-detail a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* 8. Ingredient Tag */
+.ingredient-tag {
+  @apply bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm mr-2 cursor-pointer hover:bg-blue-200;
+}
+
+/* 9. Sidebar */
+.sidebar {
+  @apply border-l pl-4;
+}
+
+.sidebar h3 {
+  @apply font-bold mb-2;
+}
+
+.sidebar a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* 10. Grid */
+.recipe-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+}
+
+/* 11. Search and Filters */
+.filters {
+  @apply mb-6 flex flex-wrap gap-4;
+}
+
+.filter-tag {
+  @apply bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-gray-300;
+}
+
+/* Optional: Add animations with Framer Motion or Tailwind plugins */
+
