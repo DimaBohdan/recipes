@@ -8,10 +8,10 @@ interface RecipeCardProps {
 }
 
 export const RecipeCard: React.FC<RecipeCardProps> = ({ idMeal, strMeal, strMealThumb }) => (
-  <Link href={`/recipes/${idMeal}`}> 
-    <div className="recipe-card">
-      <img src={strMealThumb} alt={strMeal} />
-      <h2>{strMeal}</h2>
+  <Link href={`/recipes/${idMeal}`}>
+    <div className="border p-4 rounded hover:shadow cursor-pointer">
+      <img src={strMealThumb} alt={strMeal} className="w-full h-48 object-cover rounded" />
+      <h2 className="text-lg mt-2 text-center font-semibold">{strMeal}</h2>
     </div>
   </Link>
 );

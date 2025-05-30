@@ -16,7 +16,7 @@ export default async function RecipeInfoPage({ params }: RecipeInfoPageProps) {
   const recipe = await apiService.getRecipeById(id);
   if (!recipe) return notFound();
 
-  const sidebar = await apiService.getRecipes({ category: recipe.strCategory });
+  const sidebar = await apiService.getRecipes({ category: recipe.meals[0].strCategory });
   const sidebarRecipes = sidebar.meals.filter((r: Recipe) => r.idMeal !== recipe.idMeal);
 
   return (
@@ -25,7 +25,7 @@ export default async function RecipeInfoPage({ params }: RecipeInfoPageProps) {
         <RecipeDetail recipe={recipe} />
       </div>
       <div className="w-1/4">
-        <RecipeSidebar recipes={sidebarRecipes} category={recipe.strCategory} />
+        <RecipeSidebar recipes={sidebarRecipes} category={recipe.meals[0].strCategory} />
       </div>
     </div>
   );
