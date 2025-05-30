@@ -8,11 +8,11 @@ export class RecipesService {
     country?: string,
     category?: string,
   ): Promise<any> {
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/search.php?s=`;
-    const filterUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/filter.php?`;
+    let url = `${process.env.BASE_URL}/search.php?s=`;
+    const filterUrl = `${process.env.BASE_URL}/filter.php?`;
 
     if (search) {
-      url = `${process.env.NEXT_PUBLIC_BASE_URL}/search.php?s=${search}`;
+      url = `${process.env.BASE_URL}/search.php?s=${search}`;
     }
     if (ingredient) {
       url = `${filterUrl}i=${ingredient}`;
@@ -26,7 +26,7 @@ export class RecipesService {
   }
 
   async getRecipeById(id: string): Promise<any> {
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/lookup.php?i=${id}`;
+    const url = `${process.env.BASE_URL}/lookup.php?i=${id}`;
     const response = await fetch(url);
     return await response.json();
   }
