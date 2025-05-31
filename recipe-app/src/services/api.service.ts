@@ -7,7 +7,7 @@ export const apiService = {
     if (filter?.category) params.set('category', filter.category);
 
     const res = await fetch(`${process.env.BACKEND_URL}/recipes?${params.toString()}`);
-    console.log(filter);
+    console.log(`${process.env.BACKEND_URL}/recipes?${params.toString()}`);
     if (!res.ok) throw new Error('Failed to fetch recipes');
     return res.json();
   },
